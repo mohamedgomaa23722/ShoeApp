@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--I used ConstraintLayout because all views doesn't follow each other -->
+    <!--ex: Title and instruction in center and button is on the bottom
+    we can use relative too-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.InstructionFragment">
+
+        <!--Display Instruction Title on the center with InstructionAndWelcomeTitlesStyle-->
+        <TextView
+            android:id="@+id/InstructionTitle"
+            style="@style/InstructionAndWelcomeTitlesStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instruction_title"
+            app:layout_constraintBottom_toTopOf="@+id/moveToShowList" />
+
+        <!--Display Instruction below InstructionTitle with WelcomeAndInstructionsTextStyle-->
+        <TextView
+            android:id="@+id/instruction"
+            style="@style/WelcomeAndInstructionsTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instruction"
+            app:layout_constraintTop_toBottomOf="@+id/InstructionTitle" />
+
+        <!--Display moveToShowList button with ButtonStyle-->
+        <Button
+            android:id="@+id/moveToShowList"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/goToShoeList"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
